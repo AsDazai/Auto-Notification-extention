@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Reload with Alert",
+    "version": "1.0",
+    "description": "Reloads page every 5 minutes and alerts if 'completed' changes.",
+    "permissions": ["tabs", "scripting"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["sound.mp3"],
+        "matches": ["<all_urls>"]
+      }
+    ],
+    "action": {
+      "default_title": "Auto Reload Alert"
+    }
+  }
+  
